@@ -58,7 +58,7 @@ To enable Azure AD sign-in, set the following environment variables:
 To learn more about the above values, click [here](https://azure.microsoft.com/en-us/documentation/articles/active-directory-b2c-reference-oidc/#get-a-token).
 Additional Azure AD settings can be found in [configAzureAD.js](utils/configAzureAD.js)
 
-## Installation
+## Installation - manual
 
 Installation is as follows:
 
@@ -73,6 +73,15 @@ Installation is as follows:
 
 Deploying the code to your preferred NodeJS environment (personally I use OpenShift and Heroku)
 
+## Running with Docker Compose
+To get up and running locally with docker compose just run:
+```
+docker-compose build
+docker-compose up
+```
+Go to localhost:8090 user = admin password letmein 
 
+It will run postgres, the DB Migrations, and the app. Unfortunately due to limitations in the app it currently relies
+on brief sleep statements to ensure the DB is ready before the migrations, and the migrations are ready before the app starts.
 
-
+Other documentation is located here -> http://gpimblott.github.io/TechRadar/
